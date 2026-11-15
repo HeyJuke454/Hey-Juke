@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Earth Jukebox · Time-lapse</title>
+<title>The Atlantic Mixtape</title>
 <script src="https://cdn.jsdelivr.net/npm/tone@14.7.77/build/Tone.js"></script>
 <style>
   body { margin:0; background:#0b0f14; color:#e6edf3; font-family:system-ui,sans-serif; }
@@ -38,7 +38,7 @@
 <body>
 <main>
   <h1>Earth Jukebox · Time-lapse</h1>
-  <p class="sub" id="subtitle">Loading…</p>
+
 
   <div class="frame">
     <video id="vid" muted playsinline preload="auto"></video>
@@ -201,8 +201,7 @@ function setMode(m) {
   CONFIG.mode = m;
   updatePlotBounds();
   const stepTxt = m === "relative" ? stepC : ((hi - lo) || 1) / (CONFIG.absSteps - 1);
-  $("subtitle").textContent =
-    `${NB} ocean-masked bands · ${m} pitch · 1 step = ${stepTxt.toFixed(2)} pts · ${FPS.toFixed(1)} samples/s`;
+
   if (lastI >= 0) {
     applyVisuals(lastI);
     if (audioReady && !video.paused) applyAudio(lastI);
